@@ -7,8 +7,8 @@ app.get('/', (req, res) => {
   res.send('Hello from Express on Vercel!');
 });
 
-app.get('/api', (req, res) => {
-    res.send('Hello from Express on  - This API is working!');
-  });
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
 
 module.exports = app;
