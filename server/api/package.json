@@ -1,33 +1,15 @@
 {
-    "name": "m6-assignment",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
-        "prod": "cross-env NODE_ENV=production node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index",
-        "dev": "nodemon index",
-        "build": "echo 'No build step required for Node.js API'",
-        "vercel-build": "echo 'Build completed'",
-        "db:seed": "node scripts/seedDb.js",
-        "db:reset": "node scripts/seedDb.js",
-        "db:init": "node scripts/initDb.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
-    "dependencies": {
-        "@faker-js/faker": "^9.8.0",
-        "cors": "^2.8.5",
-        "dotenv": "^16.6.1",
-        "express": "^4.18.2",
-        "fs": "^0.0.1-security",
-        "morgan": "^1.10.0",
-        "nodemon": "^3.1.10",
-        "pg": "^8.16.0"
-    },
-    "devDependencies": {
-        "cross-env": "^7.0.3"
-    }
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "hellotest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
 }
