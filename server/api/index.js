@@ -39,21 +39,9 @@ app.use("/api/users", userRoutes); // This sets the base path for all user route
 //      credentials: true
 //  }));
 
-// Serve static files from the Vite dist folder
-if (process.env.NODE_ENV === "production") {
-    const clientBuildPath = path.join(__dirname, "../../client/dist");
-    app.use(express.static(clientBuildPath));
-
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(clientBuildPath, "index.html"));
-    });
-}
-
-// Only start the server if not on Vercel (serverless)
-if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
-    app.listen(config.port, () => {
-        console.log(`Server running on port ${config.port}`); // Express runs in a different port than PSQL
-    });
-}
+// Start the server
+app.listen(config.port, () => {
+    console.log(`Server running on port ${config.port}`); // Express runs in a different port than PSQL
+});
 
 module.exports = app;
