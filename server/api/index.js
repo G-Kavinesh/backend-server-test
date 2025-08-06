@@ -2,7 +2,6 @@
 const config = require("./config.js");
 const pool = require("./db/dbconn.js");
 
-const path = require("path"); // to serve static files in production
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -39,15 +38,7 @@ app.use("/api/users", userRoutes); // This sets the base path for all user route
 //      credentials: true
 //  }));
 
-// Serve static files from the Vite dist folder
-if (process.env.NODE_ENV === "production") {
-    const clientBuildPath = path.join(__dirname, "../../client/dist");
-    app.use(express.static(clientBuildPath));
-
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(clientBuildPath, "index.html"));
-    });
-}
+// API-only backend - no static file serving needed
 
 // Only start the server if not on Vercel (serverless)
 if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
